@@ -1,1 +1,14 @@
+.carousel {
+	height: 50vh;
+}
 
+/*pie de pagina*/
+.backgroundFooter {
+  background-color: #343a40; 
+}
+
+.footer {
+  text-align: center;
+  color: #FFF;
+  margin: 2%;
+}
