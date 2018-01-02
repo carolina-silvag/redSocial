@@ -32,6 +32,74 @@
         </div>
       </div>
     </nav>
+
+    <!-- Modal Iniciar Sesión-->
+    <div class="modal fade" id="modalLog-in" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content loginBackground">
+          <div class="modal-header text-center">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-user thumbnail" id="exampleModalLabel"><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></div>
+          </div>
+          <div class="modal-body">
+            <form class="text-center login">
+              <div class="form-group has-success has-feedback">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status" placeholder="Username">
+                </div>
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
+              </div>
+              <div class="form-group has-success has-feedback">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status" placeholder="Password">
+                </div>
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
+              </div>
+              <button type="button" class="btn btn-defaut">LOG-IN</button>
+              <p class="recoverPassword">Forgot password? <a href="#">Click Here</a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Registro-->
+    <div class="modal fade" id="modalSign-up" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content registry text-center modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <button type="button" class="btn btn-light btnLogin text-center" data-toggle="modal">Ya tienes una cuenta?</button>
+          <p class="text-center">O CREA UNA CUENTA NUEVA</p>
+
+          <div class="modal-body">
+            <form>
+              <div class="row">
+                <div class="col-md-6">
+                  <input class="form-control" type="text" placeholder="Nombre">
+                </div>
+                <div class="col-md-6">
+                  <input class="form-control" type="text" placeholder="Apellido">
+                </div>
+              </div>
+              <input class="form-control" type="text" placeholder="Nombre Usuario">
+              <input class="form-control" type="text" placeholder="Correo Electronico">
+              <input class="form-control" type="text" placeholder="Teléfono">
+              <input class="form-control" type="text" placeholder="Contraseña">
+              <button type="button" class="btn btn-default dropdown-toggle btn-nos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Como te enteraste de nosotros? <span class="caret"></span></button>
+              <button type="button" class="btn btn-info">ENVIAR</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>    
   </header>
   <section>
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -104,6 +172,10 @@
       </div>
     </div>
   </footer>
+
+  <header>
+    
+  </header>
   
   <script src="assets/js/jquery-3.2.1.min.js"></script>
   <script src="assets/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
