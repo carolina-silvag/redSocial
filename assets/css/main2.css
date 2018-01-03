@@ -1,9 +1,17 @@
+.logo{
+  background-image: url(../img/logo.png);
+	background-size: cover;
+}
+/*chat*/
+.contact{
+  background-image: url(../img/fondochat.jpg);
+}
 .border {
   border: 1px solid green;
 }
 .contact {
   border: 1px solid red;
-  height: 80vh;   
+  height: 80vh;
 }
 
 .img1 {
