@@ -37,23 +37,77 @@
       </div><!-- /.container-fluid -->
     </nav>
   </header>
-  <div class="row">
-    <section class="col-md-4">
-      
-    </section>
-    <section class="col-md-5">
-      <div>
-        <img src="" alt="">
-      </div>
-      
-    </section>
-    <section class="col-md-3">
-      
-    </section>
-  </div>
+  <section class="container-fluid">
+    <div class="row">
+      <section class="col-md-2 col-xl-2 col-ms-2 contact">
+        <div class="row">
+          <div class="col-md-4 ">
+            <img src="" alt="">
+          </div>
+          <div class="col-md-8 "> 
+            <p>Name</p>
+            <p>estado</p>
+          </div> 
+        </div>
+      </section>
+      <section class="col-md-7 col-xl-7 col-ms-7 contact">
+        <div class="border">
+          <img class="img1" src="assets/img/bellavista.jpg" alt="">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-md-6 fa fa-heart" aria-hidden="true">
+                </div>
+                <div class="col-md-6">
+                  <p>123 like</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-md-6 fa fa-heart" aria-hidden="true"></div>
+                <div class="col-md-6">
+                  <p>123 comment</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-md-6 fa fa-heart" aria-hidden="true"></div>
+                <div class="col-md-6">
+                  <p>123 galeria</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="cont"></div>
+        </div>
+
+        <div class="second row">
+          <div class="col-md-12">
+            <textarea name="txt" id="comment" cols="37" rows="3" onkeyup="enabled(); numColor(); agrandar()" placeholder="agrega un commentario"></textarea>
+            <button type="button" id="btn" class="btn-disabled" onclick="add()" disabled="true">Tweet</button>
+            <div id="tell" class="tell-1">
+              <p id="p1"></p>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+      <section class="col-md-3 col-xl-3 col-ms-3">
+        <div class="row">
+          <div class="col-md-12 maps" id="map"></div>  
+        </div>
+      </section>
+    </div>
+    
+  </section>
 
   <script src="assets/js/jquery-3.2.1.min.js"></script>
   <script src="assets/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  <!-- mapa -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfdR2-p7bETCxjk_1qQzzDDmuHD47_lsI&callback=initialize&libraries=places" async defer></script>
+  <script src="assets/js/app.js"></script>
   <!-- para la hora -->
   <script src = "assets/moment/moment.min.js"></script>
   <script src="assets/js/app.js"></script>
