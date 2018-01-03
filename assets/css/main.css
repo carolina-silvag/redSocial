@@ -11,6 +11,9 @@ body {
 p {
   text-align: justify;
 }
+ul {
+  display: inline-block;
+}
 /*logo*/
 .logo {
 	background-image: url(../img/logo.png);
