@@ -27,6 +27,23 @@ ul {
 .titulo {
   text-align: center;
 }
+/*dialogo modal*/
+.modal-dialog{
+  background-color: #87EB34;
+  border-radius: 2em;
+}
+
+.text-center{
+  margin-top: 0;
+}
+/*modal registro*/
+.modal-content{
+  background-color: #87EB34;
+}
+.thumbnail{
+  background-color: #87EB34;
+  border: 0;
+}
 /*carousel*/
 .carousel-inner img {
   width: 100%;
@@ -36,11 +53,11 @@ ul {
 }
 
 .carousel-inner {
- height: 500px;
+ height: 70vh;
 }
 /*registro*/
 .text-center {
- background-color: #00FF00;
+ background-color: #87EB34;
  border-radius: 2em;
  font-family: 'Permanent Marker', cursive;
  margin-top: 15px;
