@@ -24,3 +24,18 @@
 [debug] [2018-01-04T14:52:58.821Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/mi-red-social-1515006266015/tokens  
   
  Thu Jan 04 2018 11:52:58 GMT-0300 (Hora verano Sudamérica Pacífico)
+[debug] [2018-01-04T14:52:59.599Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Admin\Desktop\redSocial'...
+[info] 
+[debug] [2018-01-04T14:52:59.613Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/mi-red-social-1515006266015  
+  
+ Thu Jan 04 2018 11:52:59 GMT-0300 (Hora verano Sudamérica Pacífico)
+[debug] [2018-01-04T14:53:00.584Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-04T14:53:00.585Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/120754645224/clients/_:getWebAppConfig  
+  
+ Thu Jan 04 2018 11:53:00 GMT-0300 (Hora verano Sudamérica Pacífico)
+[debug] [2018-01-04T14:53:01.682Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./
+[info] +  hosting: Local server: http://localhost:5000
+
