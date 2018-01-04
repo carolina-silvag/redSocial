@@ -49,7 +49,7 @@
               <div class="form-group has-success has-feedback">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                  <input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status" placeholder="Username">
+                  <input type="text" class="form-control" id="email" aria-describedby="inputGroupSuccess1Status" placeholder="Username">
                 </div>
                 <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
                 <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
@@ -57,12 +57,12 @@
               <div class="form-group has-success has-feedback">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
-                  <input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status" placeholder="Password">
+                  <input type="text" class="form-control" id="password" aria-describedby="inputGroupSuccess1Status" placeholder="Password">
                 </div>
                 <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
                 <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
               </div>
-              <button type="button" class="btn btn-defaut"><a href="index2.html">LOG-IN</a></button>
+              <button type="button" class="btn btn-defaut" id="btn-login">LOG-IN</button>
               <p class="recoverPassword">Forgot password? <a href="#">Click Here</a></p>
             </form>
           </div>
@@ -91,11 +91,11 @@
                 </div>
               </div>
               <input class="form-control" type="text" placeholder="Nombre Usuario">
-              <input class="form-control" type="text" placeholder="Correo Electronico">
+              <input class="form-control" id="signUpEmail" type="text" placeholder="Correo Electronico">
               <input class="form-control" type="text" placeholder="Teléfono">
-              <input class="form-control" type="text" placeholder="Contraseña">
+              <input class="form-control" id="signUpPass" type="text" placeholder="Contraseña">
               <button type="button" class="btn btn-default dropdown-toggle btn-nos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Como te enteraste de nosotros? <span class="caret"></span></button>
-              <button type="button" class="btn btn-info">ENVIAR</button>
+              <button type="button" class="btn btn-info" id="btn-singUp">ENVIAR</button>
             </form>
           </div>
         </div>
@@ -168,7 +168,7 @@
       <div class="col-md-4 col-md-offset-2 text-center">
         <div class="container-fluid">
             <h2 class="title">LA BICICLETA <br>RED SOCIAL INTERECTIVA QUE TE CONECTA CON GENTE QUE VISITA NUESTRA CUIDAD <br>Se parte de nuestro grupo</h2>
-            <button type="button" class="btn btn-light btnRegistry" data-toggle="modal" data-target="#modalRegistry"><strong>REGISTRATE</strong></button>
+            <button type="button" class="btn btn-light btnRegistry" data-toggle="modal" data-target="#modalSign-up"><strong>REGISTRATE</strong></button>
             <p class="line"> O ingresa con </p>
             <i class="fa fa-facebook-official" aria-hidden="true"></i>
             <i class="fa fa-envelope-o" aria-hidden="true"></i>
@@ -177,7 +177,7 @@
       <div class="col-md-4 col-md-offset-2 text-center">
         <div class="container-fluid">
             <h2 class="title">SANTIAGO VIVO <br>CULTURA - LUGARES IMPERDIBLES - ARTE Y MUCHO MÁS</h2>
-            <button type="button" class="btn btn-light btnRegistry" data-toggle="modal" data-target="#modalRegistry"><strong>iniciar secion</strong></button>
+            <button type="button" class="btn btn-light btnRegistry" data-toggle="modal" data-target="#modalLog-in"><strong>iniciar sesion</strong></button>
             <p class="line"> O ingresa con </p>
             <i class="fa fa-facebook-official" aria-hidden="true"></i>
             <i class="fa fa-envelope-o" aria-hidden="true"></i>
@@ -221,6 +221,8 @@
   </footer>
   <script src="assets/js/jquery-3.2.1.min.js"></script>
   <script src="assets/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  <!-- para utilizar firebase --> 
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
   <!-- para la hora -->
   <script src = "assets/moment/moment.min.js"></script>
   <script src="assets/js/app.js"></script>

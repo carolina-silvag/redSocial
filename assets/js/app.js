@@ -1,5 +1,65 @@
+// (function() {
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCNeBsGHzJYaBLtaKbGXAKoCwvpNQjn7zw",
+    authDomain: "mi-red-social-1515006266015.firebaseapp.com",
+    databaseURL: "https://mi-red-social-1515006266015.firebaseio.com",
+    projectId: "mi-red-social-1515006266015",
+    storageBucket: "",
+    messagingSenderId: "120754645224"
+  };
+  firebase.initializeApp(config);
+  
+  $('#btn-login').click(login);
+  $('#btn-singUp').click(singUp);
+
+  function singUp() {
+    var email = $('#signUpEmail').val();
+    var password = $('#signUpPass').val();
+    var auth = firebase.auth();
+
+    var promise = auth.createUserWithEmailAndPassword(email, password);
+    promise.catch(e => console.log(e.message))
+  }
+
+  function login() {
+    var email = $('#email').val();
+    var password = $('#password').val();
+    var auth = firebase.auth();
+
+    var promise = auth.signInWithEmailAndPassword(email, password);
+    promise.then(function(user) {
+      window.location.href = 'index2.html';
+      console.log('logged in:', user);
+    }).catch(function(error){
+      console.log(error);
+    })
+  }
+// })
 
 
+/*var user = {
+  email: "carolinasguzman@gmail.com"
+  password: "123"
+}
+*/
+/*ref.createUser(user, function(error)) {
+  if(error){
+    console.log(error);
+  }else {
+    console.log("esta bn");
+  }
+}*/
+/*ref.authWithPassword(user);*/
+/*autentificado*/
+/*ref.onAuth(function(data){
+  if(data){
+    console.log('el user autentificado', data.iud);
+  }else {
+    console.log('no tengo user')
+  }
+})
+ref.unauth();*/
 
 /*agregar comentario a la imagen*/
 function enabled() {
