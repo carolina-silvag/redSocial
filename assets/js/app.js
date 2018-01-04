@@ -43,8 +43,10 @@ function ingresoGoogle() {
   if(!firebase.auth().currentUser){
     var provider = new firebase.auth.GoogleAuthProvider();
 
-    provider.addScope('https:www.googleapis.com/auth/plus.login');
+    provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
     console.log("hola");
+
+
     firebase.auth().signInWithPopup(provider).then(function(result){
       console.log("hola2");
 
