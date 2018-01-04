@@ -11,13 +11,17 @@ body {
 p {
   text-align: justify;
 }
-ul {
-  display: inline-block;
-}
 /*logo*/
 .logo {
 	background-image: url(../img/logo.png);
 	background-size: cover;
+}
+
+.googleIcono {
+  background-image: url(../img/google.png);
+  background-size: cover;
+  height: 10vh;
+  width: 10%;
 }
 
 .navbar-brand {

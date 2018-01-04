@@ -37,6 +37,41 @@
   }
 // })
 
+$('#icoGoogle').click(ingresoGoogle);
+
+function ingresoGoogle() {
+  if(!firebase.auth().currentUser){
+    var provider = new firebase.auth.GoogleAuthProvider();
+
+    provider.addScope('https:www.googleapis.com/auth/plus.login');
+    console.log("hola");
+    firebase.auth().signInWithPopup(provider).then(function(result){
+      console.log("hola2");
+
+      var token = result.credential.accesstoken;
+
+      var user = result.user;
+      console.log(user)
+
+    }).catch(function(error) {
+      console.log("error", error.message);
+      var errorCode = error.Code;
+
+      var errorMessage = error.message;
+
+      var errorEmail = error.email;
+
+      var errorCredential = error.credential
+
+      if(errorCode === 'auth/account-exists-with-different-credential'){
+        alert('Es el mismo usuario')
+      }
+    });
+  }else {
+    firebase.auth().signOut();
+  }
+}
+
 
 /*var user = {
   email: "carolinasguzman@gmail.com"
