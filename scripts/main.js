@@ -1,18 +1,4 @@
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+
 'use strict';
 
 // Initializes FriendlyChat.
@@ -27,9 +13,9 @@ function FriendlyChat() {
   this.submitImageButton = document.getElementById('submitImage');
   this.imageForm = document.getElementById('image-form');
   this.mediaCapture = document.getElementById('mediaCapture');
-  this.userPic = document.getElementById('user-pic');
+  /*this.userPic = document.getElementById('user-pic');
   this.userName = document.getElementById('user-name');
-  this.signInButton = document.getElementById('sign-in');
+  this.signInButton = document.getElementById('sign-in');*/
   this.signOutButton = document.getElementById('sign-out');
   this.signInSnackbar = document.getElementById('must-signin-snackbar');
 
@@ -277,3 +263,33 @@ FriendlyChat.prototype.checkSetup = function() {
 window.onload = function() {
   window.friendlyChat = new FriendlyChat();
 };
+
+/*agregar usuarios activos*/
+
+/*userConect = database.ref("/user");
+agregarUser()
+$('#').click(eliminarUser);
+var userOnline = document.getElementById("cont-user");
+
+var cont = 0;
+
+var database = firebase.database();*/
+
+/*function agregarUser(uid,name) {
+  var conectado = userConect.push({
+    uid:uid
+    name:name
+  });
+  conectkey = conectado.key;
+}
+
+function eliminarUser() {
+  database.ref("/user/"+conectkey).remmove();
+  $('#')
+}*/
+
+/*function UserConectados(name, uid) {
+  var li = '<li id="'+uid+'" class="mdl-list__item><span class="mdl-lidt__item-primary_content><i class="material-icons mdl-list__item-icon">person</i>'
+            +name+ '</span></li>'
+  $('#user-online').append(li);
+}*/

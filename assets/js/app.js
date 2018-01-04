@@ -9,10 +9,18 @@
     messagingSenderId: "120754645224"
   };
   firebase.initializeApp(config);
+
+  var userPic = document.getElementById('user-pic');
+  var userName = document.getElementById('user-name');
   
   $('#btn-login').click(login);
   $('#btn-singUp').click(singUp);
+  $('#icoGoogle').click(ingresoGoogle);
+  $('#icoFacebook').click(ingresoFacebook);
+  $('#cerrarSesion').click(cerrar);
 
+  var database = firebase.database();
+  var userConect = null;
   function singUp() {
     var email = $('#signUpEmail').val();
     var password = $('#signUpPass').val();
@@ -36,8 +44,8 @@
     })
   }
 // })
-
-$('#icoGoogle').click(ingresoGoogle);
+var userName=document.getElementById('user-name');
+var userImage=document.getElementById('user-pic')
 
 function ingresoGoogle() {
   if(!firebase.auth().currentUser){
@@ -53,6 +61,8 @@ function ingresoGoogle() {
       var token = result.credential.accesstoken;
 
       var user = result.user;
+      var name = result.user.displayName;
+
       console.log(user)
       window.location.href = 'index2.html';
 
@@ -75,6 +85,82 @@ function ingresoGoogle() {
   }
 }
 
+function ingresoFacebook() {
+  if(!firebase.auth().currentUser){
+    var provider = new firebase.auth.FacebookAuthProvider();
+
+    provider.addScope('public_profile');
+    console.log("hola");
+
+
+    firebase.auth().signInWithPopup(provider).then(function(result){
+      console.log("hola2");
+
+      var token = result.credential.accesstoken;
+
+      var user = result.user;
+      console.log(user)
+      /*var name = result.user.displayName;*/
+
+      window.location.href = 'index2.html';
+
+    }).catch(function(error) {
+      console.log("error", error.message);
+      var errorCode = error.Code;
+
+      var errorMessage = error.message;
+
+      var errorEmail = error.email;
+
+      var errorCredential = error.credential
+
+      if(errorCode === 'auth/account-exists-with-different-credential'){
+        alert('Es el mismo usuario')
+      }
+    });
+  }else {
+    firebase.auth().signOut();
+  }
+}
+
+function InicializarFire () {
+  firebase.auth().onAuthStateChanged(function(user){
+    if(user){
+      conosle.log(user);
+      var displayName = user.displayName;
+      var userPhoto = user.photoURL;
+      var userEmail = user.email;
+
+      if(userPhoto){
+        userImage.style.backgroundImage = 'url("+userPhoto+")'
+      }else{
+userImage.style.backgroundImage = 'url()'
+      }
+      /*userName.textContent = displayName;*/
+      userConect = database.ref("/user");
+      agregarUserBD(user.uid,user.displayName);
+      /*child_added:*/ //escuchar
+      /*child_change:*//*evento para capturar cuando se realiza un modificacion*/
+      /*child_remove:*///remover un registro
+
+      /*.on*/
+      userConect.on('child_added', function(data){
+        conosle.log("ha ingreado a la sala"+data.val().name);
+      })
+      /*database.ref("/user").on*/
+    }
+  });
+}
+function agregarUserBD(uid,name){
+  var conectados = userConect.push({
+    uid:uid,
+    name:name
+  })
+}
+
+window.onload = function(){
+  InicializarFire();
+}
 
 /*var user = {
   email: "carolinasguzman@gmail.com"
@@ -171,6 +257,8 @@ function enabled() {
 }
 
 /*mapa*/
+
+/*falta localizar por filtro*/
 var map;
 var map2;
 var service;
@@ -199,7 +287,7 @@ function initialize() {
       var request = {
         location: pos,
         radius: '500',
-        types: ['cultura']
+        types: ['restaurant']
       };
       positionMap = pos;
       service.nearbySearch(request, callback);
@@ -220,7 +308,7 @@ function initialize() {
   })
 }
 
-/*function setDefaultMap(defaultPosition) {
+function setDefaultMap(defaultPosition) {
   var request = {
     location: defaultPosition,
     radius: '500',
@@ -235,9 +323,10 @@ function setSearchMap(search) {
   var request = {
     location: positionMap,
     radius: '500',
-    types: ['restaurant'],
+    types: [search],
     keyword: [search]
   };
+
 
   service.nearbySearch(request, callback);
 }
@@ -281,4 +370,22 @@ function removeMarker() {
     markers[i].setMap(null);
   }
   markers = [];
-}*/
+}
+
+function createElement(place, index) {
+  console.log(place.name, place.photos);
+}
+
+$('#btnSearch').click(search);
+function search() {
+  setSearchMap($('#inputSearch').val());
+}
+
+$('#btnSearch').click(search);
+function search() {
+  setSearchMap($('#inputSearch').val());
+}
+
+
+
+

@@ -88,14 +88,11 @@
   <section class="container-fluid">
     <div class="row">
       <section class="col-md-2 col-xl-2 col-ms-2 contact">
-        <div class="row">
-          <div class="col-md-4 ">
-            <img src="" alt="">
-          </div>
-          <div class="col-md-8 ">
-            <p>Name</p>
-            <p>estado</p>
-          </div>
+        <div>
+          <h2 class="text-card mdl-card__title-text">usuasrios online(<span id="cont-user">0</span>)</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          <ul id="user-online" class="demo-list-icon mdl-list"></ul>
         </div>
       </section>
       <section class="col-md-7 col-xl-7 col-ms-7 chat">
@@ -140,9 +137,7 @@
             </div>
           </div>
         </div>
-      </section>
-
-      <section class="col-md-7 col-xl-7 col-ms-7 chat">
+        <!-- siguiente post -->
         <div class="border">
           <img class="img1" src="assets/img/bellavista.jpg" alt="">
           <div class="row">
@@ -186,10 +181,35 @@
           </div>
         </div>
       </section>
+
 
       <section class="col-md-3 col-xl-3 col-ms-3">
         <div class="row">
           <div class="col-md-12 maps" id="map"></div>
+        </div>
+        <div class="input-group input-group-lg">
+          <input id="inputSearch" type="text" class="form-control" placeholder="Search for...">
+          <span class="input-group-btn">
+            <button id="btnSearch" class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </span>
+        </div> 
+        <div>
+          <label class="control-label" for="inputSuccess2">Categorias</label>
+          <select class="form-control">
+            <option>museo</option>
+            <option>restaurant</option>
+            <option>arte</option>
+            <option>cerros</option>  
+          </select>  
+        </div>
+        <div>
+          <label class="control-label" for="inputSuccess2">Comuna</label>
+          <select class="form-control">
+            <option>Puente Alto</option>
+            <option>Santiago Centro</option>
+            <option>Maipu</option>
+            <option>Florida</option>  
+          </select>  
         </div>
       </section>
     </div>
@@ -272,9 +292,9 @@
   <script src="assets/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
   <!-- mapa -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfdR2-p7bETCxjk_1qQzzDDmuHD47_lsI&callback=initialize&libraries=places" async defer></script>
-  <script src="assets/js/app.js"></script>
   <!-- para la hora -->
   <script src = "assets/moment/moment.min.js"></script>
-<script src="scripts/main.js"></script>
+<!-- <script src="scripts/main.js"></script> -->
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
