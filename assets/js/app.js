@@ -54,6 +54,7 @@ function ingresoGoogle() {
 
       var user = result.user;
       console.log(user)
+      window.location.href = 'index2.html';
 
     }).catch(function(error) {
       console.log("error", error.message);
