@@ -1,5 +1,5 @@
 body{
-  background-color: black;
+  background-image: linear-gradient(to right,#c4e17f,#c4e17f 12.5%,#f7fdca 12.5%,#f7fdca 25%,#fecf71 25%,#fecf71 37.5%,#f0776c 37.5%,#f0776c 50%,#db9dbe 50%,#db9dbe 62.5%,#c49cde 62.5%,#c49cde 75%,#669ae1 75%,#669ae1 87.5%,#62c2e4 87.5%,#62c2e4);
   font-family: 'Permanent Marker', cursive;
 
 }
@@ -10,9 +10,23 @@ body{
   width: 30vh;
   height: 20vh;
 }
+
+.navbar-nav>li>a{
+  padding-top: 30px;
+}
+
+.dropdown-menu {
+  font-family: 'Permanent Marker', cursive;
+}
+
+.start{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 2em;
+}
 .dropdown{
   padding-top: 10px;
 }
+
 .inicio{
   width: 10vh;
 }
@@ -21,6 +35,10 @@ body{
   background-image: url(../img/fondochat.jpg);
   background-size: cover;
 }
+.mdl-card__supporting-text{
+  overflow: 0;
+}
+
 .border {
   border: 1px solid green;
   background-color: #FFF;
@@ -37,6 +55,16 @@ body{
 
 .maps {
   height: 50vh;
+  margin-top: 50px;
+}
+.input-group-lg {
+  padding-top: 50px;
+}
+.control-label{
+  padding-top: 10px;
+}
+.btnSearchFil {
+  margin-top: 30px;
 }
 
 .imgPost {
@@ -51,4 +79,11 @@ body{
 .foto {
   width: 20px;
   height: 25px;
+}
+.title{
+  text-align: center;
+  font-family: 'Permanent Marker', cursive;
+}
+.rowborder{
+  padding: 20px;
 }

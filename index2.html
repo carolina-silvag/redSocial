@@ -25,22 +25,22 @@
   <!-- Web Application Manifest -->
   <link rel="manifest" href="manifest.json">
 
-  
+
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="Friendly Chat">
   <meta name="theme-color" content="#303F9F">
 
-  
+
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Friendly Chat">
   <meta name="apple-mobile-web-app-status-bar-style" content="#303F9F">
 
- 
+
   <meta name="msapplication-TileColor" content="#3372DF">
   <meta name="msapplication-navbutton-color" content="#303F9F">
 
-  
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
   <link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.7-dist/css/bootstrap.min.css">
@@ -63,13 +63,13 @@
               <div hidden id="user-name"></div>
             </li> -->
             <li class="dropdown">
-        
+
               <a id="sign-in" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 <div class="row">
                   <div hidden id="user-pic" class="foto col-md-1"></div>
                   <div hidden id="user-name" class="col-md-9"></div>
                   <span class="caret"></span>
-                  
+
                 </div></a>
               <!-- <i class="material-icons">account_circle</i> -->
               <ul class="dropdown-menu">
@@ -82,7 +82,7 @@
                 <li hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">Sign-out</li>
               </ul>
             </li>
-            <li><a href="index2.html">inicio</a></li>
+            <li><a class="start" href="index2.html">inicio</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#"></a></li>
@@ -104,7 +104,7 @@
       </section>
       <section class="col-md-7 col-xl-7 col-ms-7 chat">
         <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-          
+
           <!-- <form id="message-form" action="#">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <input class="mdl-textfield__input" type="text" id="message">
@@ -129,7 +129,7 @@
               <i class="material-icons">image</i>
             </button>
           </form>
-          
+
         </div> -->
         <div class=" row border">
           <div class="col-md-12" id="post1">
@@ -192,7 +192,7 @@
               </div>
             </div>
           </div>
-          
+
         </div>
         <!-- siguiente post -->
         <!-- <div class="border">
@@ -262,7 +262,10 @@
 
 
       <section class="col-md-3 col-xl-3 col-ms-3">
-        <div class="row">
+        <div class="row title">
+          <div class="col-xs-12 col-md-12"></div>
+          <h1>Busca el Lugar que quieras conocer</h1>
+          <h3>Y contactate con gente al instante!!!</h3>
           <div class="col-md-12 maps" id="map"></div>
         </div>
         <div class="input-group input-group-lg">
@@ -270,7 +273,7 @@
           <span class="input-group-btn">
             <button id="btnSearch" class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
           </span>
-        </div> 
+        </div>
         <div>
           <label class="control-label" for="inputSuccess2">Categorias</label>
           <select class="form-control" id="categoria">
@@ -278,9 +281,9 @@
             <option value="restaurant">Restaurant</option>
             <option value="art_gallery">Galeria de Arte</option>
             <option value="amusement_park">Parque de Atracciones</option>
-            <option value="aquarium">acuario</option> 
-            <option value="park">Parques</option> 
-          </select>  
+            <option value="aquarium">acuario</option>
+            <option value="park">Parques</option>
+          </select>
         </div>
         <div>
           <label class="control-label" for="inputSuccess2">Comuna</label>
@@ -289,7 +292,7 @@
             <option value="Santiago Centro, Chile">Santiago Centro</option>
             <option value="Maipu, Chile">Maipu</option>
             <option value="La Florida, Chile">Florida</option>
-          </select>  
+          </select>
         </div>
         <button type="button" class="btn btn-light btnSearchFil" id="btnSearchFiltros"><strong>BUSCAR</strong></button>
       </section>

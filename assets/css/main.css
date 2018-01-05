@@ -34,7 +34,7 @@ p {
 /*dialogo modal*/
 .modal-dialog{
   background-color: #87EB34;
-  border-radius: 2em;
+  border-radius: 10em;
 }
 
 .text-center{
@@ -43,6 +43,7 @@ p {
 /*modal registro*/
 .modal-content{
   background-color: #87EB34;
+  border-radius: 2em;
 }
 .thumbnail{
   background-color: #87EB34;

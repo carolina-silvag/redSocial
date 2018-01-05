@@ -1,8 +1,17 @@
 body {
- font-family: 'Permanent Marker', cursive;
+     font-family: 'Permanent Marker', cursive;
+     background-image: linear-gradient(to right,#c4e17f,#c4e17f 12.5%,#f7fdca 12.5%,#f7fdca 25%,#fecf71 25%,#fecf71 37.5%,#f0776c 37.5%,#f0776c 50%,#db9dbe 50%,#db9dbe 62.5%,#c49cde 62.5%,#c49cde 75%,#669ae1 75%,#669ae1 87.5%,#62c2e4 87.5%,#62c2e4);
 }
-.config{
- background-image: linear-gradient(to right,#c4e17f,#c4e17f 12.5%,#f7fdca 12.5%,#f7fdca 25%,#fecf71 25%,#fecf71 37.5%,#f0776c 37.5%,#f0776c 50%,#db9dbe 50%,#db9dbe 62.5%,#c49cde 62.5%,#c49cde 75%,#669ae1 75%,#669ae1 87.5%,#62c2e4 87.5%,#62c2e4);
+
+.logo{
+  background-image: url(../img/logo.png);
+	background-size: cover;
+  width: 15vh;
+  height: 10vh;
+}
+
+.title{
+    background-color: #FFF;
 }
 
 .material-switch > input[type="checkbox"] {
@@ -28,6 +37,7 @@ body {
     transition: all 0.4s ease-in-out;
     width: 40px;
 }
+
 .material-switch > label::after {
     background: rgb(255, 255, 255);
     border-radius: 16px;
@@ -41,12 +51,15 @@ body {
     transition: all 0.3s ease-in-out;
     width: 24px;
 }
+
 .title{
-text-align: center;
-text-transform: uppercase;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 25px;
 }
+
 .title p{
-text-align: center;
-color: #999;
-text-transform: uppercase;
+    text-align: center;
+    color: #999;
+    text-transform: uppercase;
 }
