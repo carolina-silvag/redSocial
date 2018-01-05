@@ -59,11 +59,12 @@
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="dropdown">
-              <div hidden id="user-pic"></div>
+            <li><div hidden id="user-pic"></div>
               <div hidden id="user-name"></div>
+            </li>
+            <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-              <i class="material-icons">account_circle</i>Sign-in with Google
+              <i class="material-icons">account_circle</i>
               </button><span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Administrar página</a></li>
@@ -195,22 +196,25 @@
         </div> 
         <div>
           <label class="control-label" for="inputSuccess2">Categorias</label>
-          <select class="form-control">
-            <option>museo</option>
-            <option>restaurant</option>
-            <option>arte</option>
-            <option>cerros</option>  
+          <select class="form-control" id="categoria">
+            <option value="museum">Museo</option>
+            <option value="restaurant">Restaurant</option>
+            <option value="art_gallery">Galeria de Arte</option>
+            <option value="amusement_park">Parque de Atracciones</option>
+            <option value="aquarium">acuario</option> 
+            <option value="park">Parques</option> 
           </select>  
         </div>
         <div>
           <label class="control-label" for="inputSuccess2">Comuna</label>
-          <select class="form-control">
-            <option>Puente Alto</option>
-            <option>Santiago Centro</option>
-            <option>Maipu</option>
-            <option>Florida</option>  
+          <select class="form-control" id="lugar">
+            <option value="Puente Alto, Chile">Puente Alto</option>
+            <option value="Santiago Centro, Chile">Santiago Centro</option>
+            <option value="Maipu, Chile">Maipu</option>
+            <option value="La Florida, Chile">Florida</option>
           </select>  
         </div>
+        <button type="button" class="btn btn-light btnSearchFil" id="btnSearchFiltros"><strong>BUSCAR</strong></button>
       </section>
     </div>
 
@@ -275,13 +279,19 @@
 <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 <script>
     // Initialize Firebase
+    // apiKey: "AIzaSyAZnzPrcyOTjNKLT9iRFVrrC5uEhcu0iLA",
+    // authDomain: "chat-8bde5.firebaseapp.com",
+    // databaseURL: "https://chat-8bde5.firebaseio.com",
+    // projectId: "chat-8bde5",
+    // storageBucket: "chat-8bde5.appspot.com",
+    // messagingSenderId: "1049290262940"
     var config = {
-      apiKey: "AIzaSyAZnzPrcyOTjNKLT9iRFVrrC5uEhcu0iLA",
-      authDomain: "chat-8bde5.firebaseapp.com",
-      databaseURL: "https://chat-8bde5.firebaseio.com",
-      projectId: "chat-8bde5",
-      storageBucket: "chat-8bde5.appspot.com",
-      messagingSenderId: "1049290262940"
+      apiKey: "AIzaSyCNeBsGHzJYaBLtaKbGXAKoCwvpNQjn7zw",
+      authDomain: "mi-red-social-1515006266015.firebaseapp.com",
+      databaseURL: "https://mi-red-social-1515006266015.firebaseio.com",
+      projectId: "mi-red-social-1515006266015",
+      storageBucket: "",
+      messagingSenderId: "120754645224"
     };
     firebase.initializeApp(config);
   </script>
@@ -294,7 +304,6 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfdR2-p7bETCxjk_1qQzzDDmuHD47_lsI&callback=initialize&libraries=places" async defer></script>
   <!-- para la hora -->
   <script src = "assets/moment/moment.min.js"></script>
-<!-- <script src="scripts/main.js"></script> -->
-  <script src="assets/js/app.js"></script>
+  <script src="scripts/main.js"></script>
 </body>
 </html>

@@ -17,7 +17,7 @@
   $('#btn-singUp').click(singUp);
   $('#icoGoogle').click(ingresoGoogle);
   $('#icoFacebook').click(ingresoFacebook);
-  $('#cerrarSesion').click(cerrar);
+  // $('#cerrarSesion').click(cerrar);
 
   var database = firebase.database();
   var userConect = null;
@@ -52,18 +52,17 @@ function ingresoGoogle() {
     var provider = new firebase.auth.GoogleAuthProvider();
 
     provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-    console.log("hola");
 
 
     firebase.auth().signInWithPopup(provider).then(function(result){
-      console.log("hola2");
 
       var token = result.credential.accesstoken;
 
       var user = result.user;
       var name = result.user.displayName;
 
-      console.log(user)
+      console.log(user);
+      agregarUserBD(user);
       window.location.href = 'index2.html';
 
     }).catch(function(error) {
@@ -90,16 +89,15 @@ function ingresoFacebook() {
     var provider = new firebase.auth.FacebookAuthProvider();
 
     provider.addScope('public_profile');
-    console.log("hola");
 
 
     firebase.auth().signInWithPopup(provider).then(function(result){
-      console.log("hola2");
 
       var token = result.credential.accesstoken;
 
       var user = result.user;
-      console.log(user)
+      console.log(user);
+      agregarUserBD(user);
       /*var name = result.user.displayName;*/
 
       window.location.href = 'index2.html';
@@ -126,36 +124,49 @@ function ingresoFacebook() {
 function InicializarFire () {
   firebase.auth().onAuthStateChanged(function(user){
     if(user){
-      conosle.log(user);
+      console.log("USER!!!!", user);
       var displayName = user.displayName;
       var userPhoto = user.photoURL;
       var userEmail = user.email;
 
-      if(userPhoto){
-        userImage.style.backgroundImage = 'url("+userPhoto+")'
-      }else{
-userImage.style.backgroundImage = 'url()'
-      }
       /*userName.textContent = displayName;*/
       userConect = database.ref("/user");
-      agregarUserBD(user.uid,user.displayName);
+      // agregarUserBD(user);
       /*child_added:*/ //escuchar
       /*child_change:*//*evento para capturar cuando se realiza un modificacion*/
       /*child_remove:*///remover un registro
 
       /*.on*/
       userConect.on('child_added', function(data){
-        conosle.log("ha ingreado a la sala"+data.val().name);
+        console.log("ha ingreado a la sala"+data.val().name);
+      });
+      userConect.on('child_removed', function(data){
+        console.log(data.val().name+"Ha cerrado sesion")
       })
       /*database.ref("/user").on*/
     }
   });
 }
-function agregarUserBD(uid,name){
+function agregarUserBD(user){
+
+  var uid = user.uid;
+  var name = user.displayName;
+  var photoURL = user.photoURL;
   var conectados = userConect.push({
     uid:uid,
-    name:name
+    name:name,
+    photoURL:photoURL
+  });
+
+  conectKey = conectado.key;
+  firebase.database().ref('users/' + user.uid).set({
+      firstName: firstName,
+      lastName: lastName
   })
+}
+
+function EliminarUserBD(){
+  database.ref("/user/"+conectKey).remove();
 }
 
 window.onload = function(){
@@ -184,208 +195,4 @@ window.onload = function(){
   }
 })
 ref.unauth();*/
-
-/*agregar comentario a la imagen*/
-function enabled() {
-	var comments = document.getElementById('comment').value;
-	var cantidad = 140 - comments.length;
-	var espacios = comments.split(' ').length - 1;
-	var enters = comments.split('\n').length - 1;
-	document.getElementById('p1').innerHTML=cantidad;
-
-	if (comments.length == 0 || cantidad < 0 || espacios + enters == comments.length){
-		document.getElementById('btn').disabled = true;
-		document.getElementById('btn').className = 'btn-disabled';
-	}else{
-		document.getElementById('btn').disabled = false;
-		document.getElementById('btn').className = 'btn-enabled';
-	}
-}
-function add(){
-	/*tomo texto de textareaa*/
-	var comments= document.getElementById('comment').value;
-	/*limpealo del textarea*/
-	document.getElementById('comment').value = '';
-	/*el div en donde estan los comentario el html*/
-	var newComments= document.createElement('div');
-	var cont = document.getElementById('cont');
-	var hora =moment().format('LT');
-
-	var paragraph= document.createElement('p');
-	var nodoText=document.createTextNode(comments);
-	var nodoHour=document.createTextNode(hora);
-	paragraph.appendChild(nodoText);
-	/*agregar todos los huerfanos al padre(contenedor)*/
-	newComments.appendChild(paragraph);
-	newComments.appendChild(nodoHour);
-	cont.appendChild(newComments);
-	/*volver a preguntar por cada comentario*/
-	enabled();
-}
-function numColor() {
-	var comments = document.getElementById('comment').value;
-	var cantidad = 140 - comments.length;
-	if (cantidad < 20 && cantidad >=10){
-		document.getElementById('tell').className = 'tell-2';
-	}else if(cantidad < 10 && cantidad >=0){
-		document.getElementById('tell').className = 'tell-3';
-	}else{
-		document.getElementById('tell').className = 'tell-1';
-	}
-}
-
-function agrandar(){
-	var comments = document.getElementById('comment').value;
-	var linea = comments.split('\n');
-	var lineas_necesarias = parseInt(comments.length/37) + 1;
-		if((linea.length - 1 + lineas_necesarias) > 3){
-			document.getElementById('comment').rows = linea.length - 1 + lineas_necesarias;
-		} else {
-			document.getElementById('comment').rows = 3;	
-		}
-}
-
-function enabled() {
-	var comments = document.getElementById('comment').value;
-	var cantidad = 140 - comments.length;
-	document.getElementById('p1').innerHTML=cantidad;
-	if (comments.length == 0 || cantidad < 0){
-		document.getElementById('btn').disabled = true;
-	}else{
-		document.getElementById('btn').disabled = false;
-	}
-}
-
-/*mapa*/
-
-/*falta localizar por filtro*/
-var map;
-var map2;
-var service;
-var infowindow;
-var positionMap;
-var markers = [];
-var cols = 0;
-
-function initialize() {
-  var santiago = new google.maps.LatLng(-33.4691,-70.6420);
-
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: santiago,
-    zoom: 15
-  });
-            
-  infowindow = new google.maps.InfoWindow();
-  service = new google.maps.places.PlacesService(map);
-
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-      var request = {
-        location: pos,
-        radius: '500',
-        types: ['restaurant']
-      };
-      positionMap = pos;
-      service.nearbySearch(request, callback);
-
-      infowindow.setPosition(pos);
-      infowindow.setContent('Location found.');
-      map.setCenter(pos);
-    }, function() {
-      setDefaultMap(santiago);
-    });
-  } else {
-    setDefaultMap(santiago);
-  }
-
-  $('#modalLocal').on('shown.bs.modal', function (e) {
-    google.maps.event.trigger(map2, "resize");
-    console.log("entre!!")
-  })
-}
-
-function setDefaultMap(defaultPosition) {
-  var request = {
-    location: defaultPosition,
-    radius: '500',
-    types: ['restaurant']
-  };
-  positionMap = defaultPosition;
-  service.nearbySearch(request, callback);
-}
-
-
-function setSearchMap(search) {
-  var request = {
-    location: positionMap,
-    radius: '500',
-    types: [search],
-    keyword: [search]
-  };
-
-
-  service.nearbySearch(request, callback);
-}
-
-
-function callback(results, status) {
-  console.log("RESULTADO", results);
-  // Se limipia la lista de fotos
-  $('#listFood').html("");
-  cols = 0;
-  // Se limpia los marker del mapa
-  removeMarker();
-  if (status == google.maps.places.PlacesServiceStatus.OK) {
-    for (var i = 0; i < results.length; i++) {
-      var place = results[i];
-      createMarker(place);
-      createElement(place, i + 1);
-    }
-  }
-}
-
-function createMarker(place) {
-  var placeLoc = place.geometry.location;
-  //var image = 'https://userscontent2.emaze.com/images/9ee8f6cc-2b63-4759-bd7c-6492f61b815f/7710ad823f3e2aab72620a4c0c77066d.png';
-  var marker = new google.maps.Marker({
-    map: map,
-    position: placeLoc,
-    //icon: image
-  });
-
-  markers.push(marker);
-
-  google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent(place.name);
-    infowindow.open(map, this);
-  });
-}
-
-function removeMarker() {
-  for (var i = 0; i < markers.length; i++) {
-    markers[i].setMap(null);
-  }
-  markers = [];
-}
-
-function createElement(place, index) {
-  console.log(place.name, place.photos);
-}
-
-$('#btnSearch').click(search);
-function search() {
-  setSearchMap($('#inputSearch').val());
-}
-
-$('#btnSearch').click(search);
-function search() {
-  setSearchMap($('#inputSearch').val());
-}
-
-
-
 
