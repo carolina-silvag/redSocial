@@ -1,39 +1,37 @@
-/*
-body {background: #EAEAEA;}
-.user-details {position: relative; padding: 0;}
-.user-details .user-image {position: relative;  z-index: 1; width: 100%; text-align: center;}
- .user-image img { clear: both; margin: auto; position: relative;}
-
-.user-details .user-info-block {width: 100%; position: absolute; top: 55px; background: rgb(255, 255, 255); z-index: 0; padding-top: 35px;}
- .user-info-block .user-heading {width: 100%; text-align: center; margin: 10px 0 0;}
- .user-info-block .navigation {float: left; width: 100%; margin: 0; padding: 0; list-style: none; border-bottom: 1px solid #428BCA; border-top: 1px solid #428BCA;}
-  .navigation li {float: left; margin: 0; padding: 0;}
-   .navigation li a {padding: 20px 30px; float: left;}
-   .navigation li.active a {background: #428BCA; color: #fff;}
- .user-info-block .user-body {float: left; padding: 5%; width: 90%;}
-  .user-body .tab-content > div {float: left; width: 100%;}
-  .user-body .tab-content h4 {width: 100%; margin: 10px 0; color: #333;}
-*/
-
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-body
-{
+body {
     font-family: 'Permanent Marker', cursive;
-
+    background-image:-webkit-linear-gradient(left,#c4e17f,#c4e17f 12.5%,#f7fdca 12.5%,#f7fdca 25%,#fecf71 25%,#fecf71 37.5%,#f0776c 37.5%,#f0776c 50%,#db9dbe 50%,#db9dbe 62.5%,#c49cde 62.5%,#c49cde 75%,#669ae1 75%,#669ae1 87.5%,#62c2e4 87.5%,#62c2e4);background-image:-moz-linear-gradient(left,#c4e17f,#c4e17f 12.5%,#f7fdca 12.5%,#f7fdca 25%,#fecf71 25%,#fecf71 37.5%,#f0776c 37.5%,#f0776c 50%,#db9dbe 50%,#db9dbe 62.5%,#c49cde 62.5%,#c49cde 75%,#669ae1 75%,#669ae1 87.5%,#62c2e4 87.5%,#62c2e4);background-image:-o-linear-gradient(left,#c4e17f,#c4e17f 12.5%,#f7fdca 12.5%,#f7fdca 25%,#fecf71 25%,#fecf71 37.5%,#f0776c 37.5%,#f0776c 50%,#db9dbe 50%,#db9dbe 62.5%,#c49cde 62.5%,#c49cde 75%,#669ae1 75%,#669ae1 87.5%,#62c2e4 87.5%,#62c2e4);background-image:linear-gradient(to right,#c4e17f,#c4e17f 12.5%,#f7fdca 12.5%,#f7fdca 25%,#fecf71 25%,#fecf71 37.5%,#f0776c 37.5%,#f0776c 50%,#db9dbe 50%,#db9dbe 62.5%,#c49cde 62.5%,#c49cde 75%,#669ae1 75%,#669ae1 87.5%,#62c2e4 87.5%,#62c2e4)
 }
 
-.fb-profile img.fb-image-lg{
+.logo{
+  background-image: url(../img/logo.png);
+	background-size: cover;
+  width: 15vh;
+  height: 10vh;
+}
+
+.page-header {
+    background: #FFF;
+    text-align: center;
+    margin: -0px -40px 40px;
+    padding: 10px 30px;
+    border-top: 0px solid #ccc;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.page-header h3 {
+    color: #000;
+    padding-top: 30px;
+}
+
+.fb-profile img.fb-image-lg {
     z-index: 0;
     width: 100%;
     margin-bottom: 10px;
 }
 
-.fb-image-profile
-{
+.fb-image-profile {
     margin: -90px 10px 0px 50px;
     z-index: 9;
     width: 20%;
@@ -42,21 +40,19 @@ body
 @media (max-width:768px)
 {
 
-.fb-profile-text>h1{
+.fb-profile-text>h1 {
     font-weight: 700;
     font-size:16px;
 }
 
-.fb-image-profile
-{
+.fb-image-profile {
     margin: -45px 10px 0px 25px;
     z-index: 9;
     width: 20%;
 }
 }
-.thumbnail{
- width: 30vh;
-}
-.gallery{
-padding-top: 100px;
+
+.gallery {
+    padding-top:50px;
+    text-align: center;
 }
