@@ -70,7 +70,7 @@ FriendlyChat.prototype.loadPhotos = function() {
     this.photoRef = this.database.ref('photos');
     // Make sure we remove all previous listeners.
     this.photoRef.off();
-    var infoPhoto = '<div class="row"><div class="col-md-4"><div class="row"><div class="col-md-6 fa fa-heart" aria-hidden="true"></div><div class="col-md-6"><p>123 like</p></div></div></div><div class="col-md-4"><div class="row"><div class="col-md-6 fa fa-heart" aria-hidden="true"></div><div class="col-md-6"><p>123 comment</p></div></div></div><div class="col-md-4"><div class="row"><div class="col-md-6 fa fa-heart" aria-hidden="true"></div><div class="col-md-6"><p>123 galeria</p></div></div></div></div><div id="cont"></div></div>';
+    var infoPhoto = '<div class="row"><div class="col-md-4"><div class="row"><div class="col-md-6 fa fa-heart" aria-hidden="true"></div><div class="col-md-6"><p>123 like</p></div></div></div><div class="col-md-4"><div class="row"><div class="col-md-6 fa fa-comment" aria-hidden="true"></div><div class="col-md-6"><p>123 comment</p></div></div></div><div class="col-md-4"><div class="row"><div class="col-md-6 fa fa-picture-o" aria-hidden="true"></div><div class="col-md-6"><p>123 galeria</p></div></div></div></div><div id="cont"></div></div>';
 
     // Loads the last 12 messages and listen for new ones.
     var setPhoto = function(data) {
@@ -115,11 +115,11 @@ FriendlyChat.prototype.loadUser = function() {
     // Loads the last 12 messages and listen for new ones.
     var setUser = function(data) {
       var val = data.val();
-      var li = '<li><div class="row"><div class="col-md-1"><img class="imgPerfil" src="'+val.photoURL+'"></div><div class="col-md-8">'+val.name+'</div>';
+      var li = '<li><div class="row userFoto"><div class="col-md-1"><img class="imgPerfil img-circle" src="'+val.photoURL+'"></div><div class="col-md-8 comentariosUser">'+val.name+'</div>';
       if (val.online) {
         countUsersLogged++;
         $("#cont-user").html(countUsersLogged);
-        li += '<div class="col-md-2"><i class="fa fa-check-circle" aria-hidden="true"></i></div></div>';
+        li += '<div class="col-md-2"><i class="fa fa-check-circle comentariosUser" aria-hidden="true"></i></div></div>';
       }
       li += '</li>';
       $("#user-online").append(li);
@@ -317,7 +317,7 @@ FriendlyChat.prototype.requestNotificationsPermissions = function() {
 
 // Resets the given MaterialTextField.
 FriendlyChat.resetMaterialTextfield = function(element) {
-  
+
 };
 
 // Template for messages.
@@ -358,11 +358,7 @@ FriendlyChat.prototype.displayMessage = function(key, name, text, picUrl, photoI
 // Enables or disables the submit button depending on the values of the input
 // fields.
 FriendlyChat.prototype.toggleButton = function() {
-  if (this.messageInput.value) {
-    this.submitButton.removeAttribute('disabled');
-  } else {
-    this.submitButton.setAttribute('disabled', 'true');
-  }
+ 
 };
 
 // Checks that the Firebase SDK has been correctly setup and configured.
@@ -376,7 +372,6 @@ FriendlyChat.prototype.checkSetup = function() {
 
 window.onload = function() {
   window.friendlyChat = new FriendlyChat();
-
 
 };
 

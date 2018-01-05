@@ -67,7 +67,7 @@ main, #messages-card {
   margin-top: 10px;
   border-top: 1px solid #f3f3f3;
   padding-top: 10px;
-  opacity: 0;
+  /*opacity: 0;*/
   transition: opacity 1s ease-in-out;
 }
 .message-container.visible {
@@ -196,4 +196,8 @@ main, #messages-card {
 .mdl-button .material-icons {
   top: -1px;
   margin-right: 5px;
+}
+
+.comentariosUser {
+  color: #fff;
 }
