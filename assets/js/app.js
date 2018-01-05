@@ -152,21 +152,12 @@ function agregarUserBD(user){
   var uid = user.uid;
   var name = user.displayName;
   var photoURL = user.photoURL;
-  var conectados = userConect.push({
+  database.ref("/user/"+uid).set({
     uid:uid,
     name:name,
-    photoURL:photoURL
+    photoURL:photoURL,
+    online:true
   });
-
-  conectKey = conectado.key;
-  firebase.database().ref('users/' + user.uid).set({
-      firstName: firstName,
-      lastName: lastName
-  })
-}
-
-function EliminarUserBD(){
-  database.ref("/user/"+conectKey).remove();
 }
 
 window.onload = function(){

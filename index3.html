@@ -11,17 +11,37 @@
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-default nav">
+    <nav class="navbar navbar-default">
       <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand logo" href="#"></a>
-        </div>
-      </header>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><div hidden id="user-pic"></div>
+              <div hidden id="user-name"></div>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+              <i class="material-icons">account_circle</i>
+              </button><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="index3.html">perfil</a></li>
+                <li><a href="index4.html">Galeria</a></li>
+                <li><a href="#">Tus grupos</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="index5.html">Configuración</a></li>
+                <li role="separator" class="divider"></li>
+                <li hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">Sign-out</li>
+              </ul>
+            </li>
+            <li><a href="index2.html">inicio</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"></a></li>
+            <li><a href="#" class="navbar-brand logo">logo</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </header>
 
   <!-- Web Application Manifest
      <section>

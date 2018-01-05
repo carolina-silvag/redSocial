@@ -38,3 +38,17 @@ body{
 .maps {
   height: 50vh;
 }
+
+.imgPost {
+  width: 100%;
+  height: 30vh;
+}
+
+.imgPerfil {
+  width: 20px;
+  height: 20px;
+}
+.foto {
+  width: 20px;
+  height: 25px;
+}

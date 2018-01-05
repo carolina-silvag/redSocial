@@ -10,13 +10,45 @@
   <link href="https://fonts.googleapis.com/css?family=Crafty+Girls|Permanent+Marker" rel="stylesheet">
 </head>
 <body>
+	<header>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><div hidden id="user-pic"></div>
+              <div hidden id="user-name"></div>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+              <i class="material-icons">account_circle</i>
+              </button><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="index3.html">perfil</a></li>
+                <li><a href="index4.html">Galeria</a></li>
+                <li><a href="#">Tus grupos</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="index5.html">Configuración</a></li>
+                <li role="separator" class="divider"></li>
+                <li hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">Sign-out</li>
+              </ul>
+            </li>
+            <li><a href="index2.html">inicio</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"></a></li>
+            <li><a href="#" class="navbar-brand logo">logo</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </header>
 
-    <div class="page-header">
+    <div class="page-header container-fluid">
         <h3>Lugares que has visitado</h3>
         <p>La bicicleta</p>
     </div>
 
-    <div class="carousel slide" id="myCarousel">
+    <div class="carousel slide container-fluid" id="myCarousel">
         <div class="carousel-inner">
             <div class="item active">
                     <ul class="thumbnails">
